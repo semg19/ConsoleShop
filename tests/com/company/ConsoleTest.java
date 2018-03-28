@@ -5,13 +5,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ConsoleTest {
-
     @Test
     public void TestName() throws Exception {
-        Console console = new Console() {
+         Console console = new Console() {
             @Override
             public void setName(String newName) {
                 super.setName("TestName");
+                assertEquals("TestName", getName());
             }
         };
     }
@@ -25,4 +25,6 @@ public class ConsoleTest {
             }
         };
     }
+
+
 }
