@@ -1,6 +1,6 @@
 package com.company;
 
-public interface Shop {
+public interface ConsoleInterface {
     public String getName();
 
     public double getCost();

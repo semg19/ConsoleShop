@@ -22,38 +22,32 @@ public class ConsoleTesting {
 
         testGame.showTheGames();
 
-        System.out.print("What type of console do you want? You can take a look at the exclusive games to make a better choice. (P / PP / X / S)");
+        System.out.print("What type of console do you want? You can take a look at the exclusive games to make the best choice. (p / pp / x / s)");
 
-        if (userInput.hasNextLine()){
+        if (userInput.hasNextLine()) {
             String typeOfConsole = userInput.nextLine();
 
-            theConsole = consoleFactory.makeConsole(typeOfConsole);
+            String optionType = "n";
 
-            if (theConsole != null){
-                showConsole(theConsole);
-
-                System.out.print("Do you want to add a controller? (Y / N)");
-
-                if (userInput.hasNextLine()) {
-                    String typeOfController = userInput.nextLine();
-
-                    theController = consoleFactory.buyOption(typeOfController);
-                    if (theController != null) {
-                        showController(theController);
-                    } else System.out.println("Enter a Y or N next time");
+            System.out.println("Do you want to add a controller? (y / n)");
+            if (userInput.hasNextLine()) {
+                optionType = userInput.nextLine();
+                if (optionType.equals("y")) {
+                    optionType = "y";
                 }
-            } else System.out.println("Enter a P, PP, X or S next time");
+            }
+
+            theConsole = consoleFactory.makeConsole(typeOfConsole, optionType);
+
+            if (theConsole == null) {
+                System.out.print("Enter a p, pp, x or s next time");
+            } else {
+                System.out.println(theConsole.getName() + " is added to your shopping basket");
+                System.out.println("The total price is: € " + theConsole.getCost());
+                System.out.println("Your order is successfully processed");
+            }
         }
 
-
-    }
-
-    public static void showConsole(Console anConsole){
-        anConsole.displayConsole();
-    }
-
-    public static void showController(Controller anController){
-        anController.displayController();
     }
 
 }

@@ -21,13 +21,13 @@ public class AllGames {
         Iterator XboxOneGames = iterxboxGames.createIterator();
         Iterator SwitchGames = iterswitchGames.createIterator();
 
-        System.out.println("PS4\n");
+        System.out.println("PS4 (p / pp)\n");
         printTheGames(PS4Games);
 
-        System.out.println("Xbox One\n");
+        System.out.println("Xbox One (x)\n");
         printTheGames(XboxOneGames);
 
-        System.out.println("Switch\n");
+        System.out.println("Switch (s)\n");
         printTheGames(SwitchGames);
     }
 

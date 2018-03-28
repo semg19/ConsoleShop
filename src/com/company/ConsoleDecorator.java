@@ -1,6 +1,6 @@
 package com.company;
 
-public class ConsoleDecorator implements Shop {
+abstract class ConsoleDecorator extends Console implements ConsoleInterface {
 
     protected Console tempConsole;
 
