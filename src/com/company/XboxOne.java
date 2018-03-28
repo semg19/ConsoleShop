@@ -3,10 +3,7 @@ package com.company;
 public class XboxOne extends Console {
     public XboxOne() {
         setName("Xbox One");
-    }
-
-    public double getCost() {
-        System.out.println("Cost of console: " + 300.00);
-        return 300.00;
+        setCost(222.00);
+        System.out.println("Cost of Xbox One: € " + 222.00);
     }
 }

@@ -5,6 +5,7 @@ public class Controller extends ConsoleDecorator {
     public Controller(Console newConsole) {
 
         super(newConsole);
+
     }
 
 
